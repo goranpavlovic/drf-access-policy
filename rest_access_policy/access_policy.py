@@ -164,10 +164,11 @@ class AccessPolicy(permissions.BasePermission):
             fails = 0
 
             for condition in statement["condition"]:
-                ConditionOperand.check_condition_fn = lambda _, cond: self._check_condition(
+                check_cond_fn = lambda cond: self._check_condition(
                     cond, request, view, action
                 )
-                boolOperand.setParseAction(ConditionOperand)
+
+                boolOperand.setParseAction(lambda token: ConditionOperand(token, check_cond_fn))
 
                 boolExpr = infixNotation(
                     boolOperand,
