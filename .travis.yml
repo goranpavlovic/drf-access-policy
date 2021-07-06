@@ -15,19 +15,25 @@ env:
 
 matrix:
   exclude:
-    - env: DJANGO=1.8
+    - env: DJANGO=1.8.19
       python: 3.6
-    - env: DJANGO=1.8
+    - env: DJANGO=1.8.19
       python: 3.7
-    - env: DJANGO=1.8
+    - env: DJANGO=1.8.19
       python: 3.8
-    - env: DJANGO=1.8
+    - env: DJANGO=1.8.19
       python: 3.9
-    - env: DJANGO=1.11
+    - env: DJANGO=1.11.29
       python: 3.8
-    - env: DJANGO=1.11
+    - env: DJANGO=1.11.29
       python: 3.9
-    - env: DJANGO=3.0
+    - env: DJANGO=2.0.13
+      python: 3.8
+    - env: DJANGO=2.0.13
+      python: 3.9
+    - env: DJANGO=1.11.29
+      python: 3.9
+    - env: DJANGO=3.2.5
       python: 3.5
 
 install:
